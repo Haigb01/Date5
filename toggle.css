@@ -1,0 +1,269 @@
+/* initialize top toggle*/
+#header {
+	position: relative;
+	transform: translateY(-7px);
+	width: 100%;
+}
+
+.toggle1 {
+	width: 350px;
+	border-radius: 10px;
+	background-color: #9975c8;
+	position: absolute;
+	display: block;
+	margin-left: 36%;
+	transform: translateY(-68px);
+	text-transform: uppercase;
+	padding: 2px;
+	text-align: center;
+}
+
+#triangle-down {
+	display: block;
+	margin-left: 48%;
+	transform: translateY(0);
+}
+
+ol {
+	margin-right: 31px;
+}
+
+ol li {
+	display: inline;
+	margin-left: 10px;
+}
+
+ol li a {
+	text-decoration: none;
+	color: white;
+}
+
+header>input {
+	display: none;
+}
+
+/* initialize bottom toggle*/
+#footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+}
+
+.toggle2 {
+	padding: 20px;
+	color: white;
+	margin-left: 36%;
+	border-radius: 10px;
+	background-color: #9975c8;
+	position: absolute;
+	bottom: 0;
+	transform: translateY(58px);
+}
+
+#triangle-up {
+	display: block;
+	margin-left: 47%;
+	transform: translateY(0);
+}
+
+footer>input {
+	display: none;
+}
+
+/*handle top toggle*/
+#check1:checked~.toggle1 {
+	animation: animate-toggle1 1s forwards;
+}
+
+#check1:checked~#triangle-down {
+	animation: animate-triangle-down 1s forwards;
+}
+
+#check1:not(:checked)~.toggle1 {
+	animation: animate-toggle1-not-checked 1s forwards;
+}
+
+#check1:not(:checked)~#triangle-down {
+	animation: animate-triangle-down-not-checked 1s forwards;
+}
+
+/*handle bottom toggle*/
+#check2:checked~.toggle2 {
+	animation: animate-toggle2 1s forwards;
+}
+
+#check2:checked~#triangle-up {
+	animation: animate-triangle-up 1s forwards;
+}
+
+#check2:not(:checked)~.toggle2 {
+	animation: animate-toggle2-not-checked 1s forwards;
+}
+
+#check2:not(:checked)~#triangle-up {
+	animation: animate-triangle-up-not-checked 1s forwards;
+}
+
+/*create triangle-down*/
+.triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #9975c8;
+}
+
+/*create triangle-up*/
+.triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid #9975c8;
+}
+
+@keyframes animate-toggle1 {
+	0% {
+		transform: translateY(0%);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateY(20%);
+		opacity: 0.5;
+	}
+
+	100% {
+		transform: translateY(-7px);
+		opacity: 1;
+	}
+}
+
+@keyframes animate-toggle1-not-checked {
+	0% {
+		transform: translateY(-7px);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateY(20%);
+		opacity: 0.5;
+	}
+
+	100% {
+		transform: translateY(-68px);
+		opacity: 1;
+	}
+}
+
+@keyframes animate-triangle-down {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(12px);
+		opacity: 0.5;
+	}
+
+	100% {
+		transform: translateY(47px);
+		opacity: 1;
+	}
+}
+
+@keyframes animate-triangle-down-not-checked {
+	0% {
+		transform: translateY(47px);
+	}
+
+	50% {
+		transform: translateY(42px);
+		opacity: 0.5;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes animate-toggle2 {
+	0% {
+		transform: translateY(-30px);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateY(-20%);
+		opacity: 0.5;
+	}
+
+	100% {
+		transform: translateY(10px);
+		opacity: 1;
+	}
+}
+
+@keyframes animate-toggle2-not-checked {
+	0% {
+		transform: translateY(10px);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateY(-20%);
+		opacity: 0.5;
+	}
+
+	100% {
+		transform: translateY(58px);
+		opacity: 1;
+	}
+}
+
+@keyframes animate-triangle-up {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-12px);
+		opacity: 0.5;
+	}
+
+	100% {
+		transform: translateY(-47px);
+		opacity: 1;
+	}
+}
+
+@keyframes animate-triangle-up-not-checked {
+	0% {
+		transform: translateY(-47px);
+	}
+
+	50% {
+		transform: translateY(-47px);
+		opacity: 0.5;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
